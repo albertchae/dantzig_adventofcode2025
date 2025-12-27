@@ -112,6 +112,16 @@ defmodule Dantzig.HiGHS do
 
     bounds = all_variable_bounds(Map.values(problem.variables))
 
+    # need to list the integer variables under General
+    # https://www.fico.com/fico-xpress-optimization/docs/dms2021-01/solver/optimizer/HTML/chapter10_sec_section102.html
+    # Variables that do not appear in any of the variable type registration sections (i.e., integers, generals, binaries, semi-continuous, semi integer, partial integer) are defined to be continuous variables by default. That is, there is no section defining variables to be continuous variables.
+    integer_variables = problem.variables
+                        |> Map.filter(fn {_, v} ->
+                          v.type == :integer
+                        end)
+                        |> Map.keys()
+                        |> Enum.join(" ")
+
     [
       direction_to_iodata(problem.direction),
       "\n  ",
@@ -122,6 +132,7 @@ defmodule Dantzig.HiGHS do
       "Bounds\n",
       bounds,
       "General\n",
+      integer_variables <> "\n",
       "End\n"
     ]
   end
