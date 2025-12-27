@@ -16,9 +16,9 @@ defmodule Dantzig.MixProject do
       ],
       elixirc_paths: elixirc_paths(Mix.env()),
       package: package(),
-      name: "Danztig",
-      description: "Linear progamming solver for elixir",
-      source_url: "https://github.com/tmbb/dantzig"
+      name: "Dantzig for Advent of Code 2025",
+      description: "Fork of tmbb/dantzig tweaked for Advent of Code 2025",
+      source_url: "https://github.com/albertchae/dantzig_adventofcode2025"
     ]
   end
 
@@ -53,10 +53,11 @@ defmodule Dantzig.MixProject do
 
   defp package() do
     [
+      name: :dantzig_adventofcode2025,
       # These are the default files included in the package
       files: ~w(lib priv .formatter.exs mix.exs README* LICENSE* CHANGELOG*),
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/tmbb/dantzig"}
+      links: %{"GitHub" => "https://github.com/albertchae/dantzig_adventofcode2025"}
     ]
   end
 end
