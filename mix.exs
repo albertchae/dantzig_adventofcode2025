@@ -5,7 +5,7 @@ defmodule Dantzig.MixProject do
 
   def project do
     [
-      app: :dantzig,
+      app: :dantzig_adventofcode2025,
       version: @version,
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -53,7 +53,6 @@ defmodule Dantzig.MixProject do
 
   defp package() do
     [
-      name: :dantzig_adventofcode2025,
       # These are the default files included in the package
       files: ~w(lib priv .formatter.exs mix.exs README* LICENSE* CHANGELOG*),
       licenses: ["MIT"],

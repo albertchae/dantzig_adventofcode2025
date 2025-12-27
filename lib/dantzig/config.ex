@@ -4,7 +4,7 @@ defmodule Dantzig.Config do
   @highs_version_file_basename "highs_version.txt"
 
   def default_highs_binary_path() do
-    :dantzig
+    :dantzig_adventofcode2025
     |> :code.priv_dir()
     |> Path.join("bin")
     |> Path.join("highs")
@@ -30,11 +30,11 @@ defmodule Dantzig.Config do
   end
 
   def get_highs_version() do
-    Application.get_env(:dantzig, :highs_version, "1.9.0")
+    Application.get_env(:dantzig_adventofcode2025, :highs_version, "1.9.0")
   end
 
   def get_highs_binary_path() do
-    case Application.fetch_env(:dantzig, :highs_binary_path) do
+    case Application.fetch_env(:dantzig_adventofcode2025, :highs_binary_path) do
       {:ok, value} ->
         value
 
@@ -44,6 +44,6 @@ defmodule Dantzig.Config do
   end
 
   def put_highs_binary_path(value) do
-    Application.put_env(:dantzig, :highs_binary_path, value)
+    Application.put_env(:dantzig_adventofcode2025, :highs_binary_path, value)
   end
 end
