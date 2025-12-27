@@ -1,3 +1,5 @@
+Fork of https://github.com/tmbb/dantzig/ with modifications for https://adventofcode.com/2025
+
 # Dantzig
 
 Opimitizion library for elixir, using the HiGHS solver.
